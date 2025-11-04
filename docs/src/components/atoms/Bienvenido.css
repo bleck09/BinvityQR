@@ -1,0 +1,85 @@
+.welcome-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0A0F1E, #004C99);
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  margin: 30px auto;
+  max-width: 900px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Título futurista / neon */
+.welcome-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 5px #33E6FF,
+    0 0 10px #00FFFF,
+    0 0 20px #00FFFF;
+}
+
+.neon-text {
+  color: #00FFFF;
+  text-shadow:
+    0 0 5px #33E6FF,
+    0 0 10px #00FFFF,
+    0 0 20px #00FFFF,
+    0 0 40px #00FFFF;
+}
+
+.welcome-description {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto 20px auto;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.welcome-cta {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #33E6FF;
+  text-shadow: 0 0 5px #00FFFF;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .welcome-section {
+    padding: 60px 15px;
+  }
+
+  .welcome-title {
+    font-size: 2.2rem;
+  }
+
+  .welcome-description {
+    font-size: 1.1rem;
+  }
+
+  .welcome-cta {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-section {
+    padding: 40px 10px;
+  }
+
+  .welcome-title {
+    font-size: 1.8rem;
+  }
+
+  .welcome-description {
+    font-size: 1rem;
+  }
+
+  .welcome-cta {
+    font-size: 0.95rem;
+  }
+}

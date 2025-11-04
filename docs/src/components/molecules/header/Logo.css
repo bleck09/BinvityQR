@@ -1,0 +1,19 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #d0e4ff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2563eb; /* azul moderno */
+}

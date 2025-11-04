@@ -1,0 +1,13 @@
+.TransicionesModernas { 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: calc(100vh - 80px);
+  padding: 50px 20px;
+  /* Gradiente con tus colores principales */
+  background: linear-gradient(135deg, #0A0F1E, #004C99);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #00FFFF; /* Cian luminoso principal para el texto */
+}
+
+

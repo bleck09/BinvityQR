@@ -1,0 +1,57 @@
+/* Fondo degradado */
+.error-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+/* Card central */
+.error-card {
+  background: #fff;
+  padding: 50px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.error-card h1 {
+  font-size: 80px;
+  color: #ff4d6d;
+  margin-bottom: 10px;
+}
+
+.error-card h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.error-card p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* Botón volver al inicio */
+.back-home-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #ff4d6d;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.back-home-btn:hover {
+  background: #ff7eb3;
+  color: #fff;
+  transform: translateY(-3px);
+}

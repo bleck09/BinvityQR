@@ -1,0 +1,47 @@
+.stack-gallery {
+  position: relative;
+  perspective: 800px;
+}
+
+.card-tilt {
+  position: absolute;
+  cursor: grab;
+}
+
+.card-mod {
+  border-radius: 20px;
+  border: 5px solid #6dd3fcff;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-mod-image {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.card-mod-content {
+  padding: 10px;
+  background-color: #fff;
+  text-align: center;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-mod-content h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.card-mod-content p {
+  margin: 5px 0 0;
+  font-size: 0.85rem;
+  color: #555;
+}
