@@ -1,22 +1,39 @@
 .PrincipalUnique {
   width: 100%;
-  height: 50vh;
+  height: 50vh; /* tu valor original */
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
+  /* si quieres que el fondo ocupe más espacio, cambia height a 80vh o 100vh */
 }
 
+/* fondo orb exactamente como el original */
+.orb-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Texto encima */
 .PrincipalText {
   font-size: 8vw;
   font-weight: bold;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   letter-spacing: 6px;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  pointer-events: none; /* para que el mouse interacting con canvas no sea bloqueado */
 }
 
 .PrincipalBinvity {
-  color: #0A0F1E;
+  color: #0A0F1E; /* cian luminoso: ajustado según tus colores */
   text-shadow:
     0 0 5px #33E6FF,
     0 0 10px #00FFFF,
@@ -26,11 +43,19 @@
 }
 
 .PrincipalQR {
-  color: #ffffff;
+  color: #f7f7f7;
   text-shadow:
-    0 0 5px #33E6FF,
-    0 0 10px #00FFFF,
+    0 0 5px #0A0F1E,
+    0 0 10px #0A0F1E,
     0 0 20px #00FFFF,
     0 0 40px #00FFFF;
   transition: opacity 0.3s ease;
+}
+
+/* Si quieres que el canvas quede ligeramente difuminado bajo el texto */
+.orb-container canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: saturate(1.05) contrast(1.05);
 }
