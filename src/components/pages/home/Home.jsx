@@ -4,8 +4,10 @@ import CardModerno from "../../atoms/CardModerno";
 import CTA from "../../atoms/CTA";
 import GaleriaFotos from '../../atoms/GaleriaFotos';
 import Tarjetas from "../../secciones/tarjetas/Tarjetas";
+import Nosotros from "../../secciones/nosotros/Nosotros";
 import "./Home.css";
 import Principal from "../../secciones/principal/Principal";
+import Catalogo from "../../secciones/catagolo/Catalogo";
 
 
 const Home = () => {
@@ -18,6 +20,8 @@ const Home = () => {
 
         <Tarjetas />
       </div>
+      <Nosotros />
+      <Catalogo/>
 
       {/* Sección de bienvenida */}
       <Bienvenido />

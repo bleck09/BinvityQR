@@ -1,0 +1,87 @@
+.nosotros-section {
+  max-width: 900px;
+  margin: 5rem auto;
+  padding: 3rem;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  color: #ffffff;
+  background: rgba(10, 15, 30, 0.6);
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.nosotros-section:hover {
+  box-shadow: 0 0 40px rgba(255, 102, 255, 0.4);
+}
+
+.nosotros-titulo {
+  font-size: 2.2rem;
+  color: #ff66ff;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.nosotros-descripcion,
+.nosotros-detalle,
+.nosotros-final {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #e0e0e0;
+}
+
+.resalte {
+  color: #ff66ff;
+  font-weight: bold;
+}
+
+.qr-text {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nosotros-section {
+    padding: 2rem;
+    margin: 3rem 1rem;
+  }
+
+  .nosotros-titulo {
+    font-size: 1.8rem;
+  }
+
+  .nosotros-descripcion,
+  .nosotros-detalle,
+  .nosotros-final {
+    font-size: 1rem;
+  }
+}
+
+
+/* Boton */
+.btn-nosotros {
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  background: linear-gradient(90deg, #00ffff, #0077ff);
+  border: none;
+  border-radius: 2rem;
+  color: #0a0f1e;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+  text-decoration: none; /* ✅ Quita el subrayado */
+  display: inline-block; /* ✅ Asegura que se vea como botón */
+}
+
+.btn-nosotros:hover {
+  background: linear-gradient(90deg, #0077ff, #00ffff);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
