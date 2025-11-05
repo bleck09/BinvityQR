@@ -5,11 +5,18 @@ import './Error404.css';
 const Error404 = () => {
   return (
     <div className="error-page">
+      <div className="error-glow"></div>
+
       <div className="error-card">
-        <h1>404</h1>
-        <h2>Página no encontrada</h2>
-        <p>Lo sentimos, la página que buscas no existe.</p>
-        <Link to="/" className="back-home-btn">Volver al inicio</Link>
+        <h1 className="error-code">404</h1>
+        <h2 className="error-title">Página no encontrada</h2>
+        <p className="error-message">
+          Lo sentimos, la dimensión que buscas no existe dentro de Binvity QR.
+        </p>
+
+        <Link to="/" className="back-home-btn">
+          Volver al inicio
+        </Link>
       </div>
     </div>
   );

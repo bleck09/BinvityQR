@@ -1,7 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import PropTypes from 'prop-types';
 import toast, { Toaster } from "react-hot-toast";
 import "./Login.css";
+
+const AnimatedText = ({ text, className, delay = 100, color }) => {
+  const [letters, setLetters] = useState([]);
+
+  useEffect(() => {
+    setLetters(text.split(""));
+  }, [text]);
+
+  return (
+    <h1 className={`animated-text ${className}`}>
+      {letters.map((letter, index) => (
+        <span
+          key={index}
+          className="animated-letter"
+          style={{
+            animationDelay: `${index * delay}ms`,
+            color: color,
+          }}
+        >
+          {letter}
+        </span>
+      ))}
+    </h1>
+  );
+};
+AnimatedText.propTypes = {
+  text: PropTypes.string.isRequired,
+  className: PropTypes.string,
+  delay: PropTypes.number,
+  color: PropTypes.string,
+};
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -18,7 +50,7 @@ const Login = () => {
       toast.success("Bienvenido, Bleck 👋");
       setTimeout(() => navigate("/"), 1500);
     } else {
-      toast.error("Correo o contraseña incorrectos ❌");
+      toast.error("Correo o contraseña incorrectos");
     }
   };
 
@@ -26,16 +58,27 @@ const Login = () => {
     <div className="login-page">
       <Toaster position="top-right" />
       <div className="login-card">
-        <h2>Iniciar Sesión</h2>
-
+        {/* Animación Binvity QR */}
+        <div className="login-title">
+          <AnimatedText text="Binvity" className="principal-binvity" delay={80} />
+          <AnimatedText text="QR" color="#ffffff" delay={80} />
+        </div>
         <form onSubmit={handleSubmit}>
           <div className="input-group">
-            <label>Correo electrónico</label>
-            <input type="email" name="email" placeholder="Ingrese su correo" required />
+
+            <AnimatedText text="Correo electronico" delay={50} className="small-text" />
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Ingrese su correo"
+              required
+            />
           </div>
 
           <div className="input-group password-group">
-            <label>Contraseña</label>
+            <AnimatedText text="Contraseña" delay={50} className="small-text" />
+
             <input
               type={showPassword ? "text" : "password"}
               name="password"
@@ -51,7 +94,7 @@ const Login = () => {
             </button>
           </div>
 
-          <button type="submit" className="login-btn">
+          <button type="submit" className="back-home-btn">
             Ingresar
           </button>
         </form>

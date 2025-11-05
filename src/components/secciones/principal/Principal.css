@@ -23,7 +23,7 @@
 .PrincipalText {
   font-size: 8vw;
   font-weight: bold;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Georgia', serif; font-style: italic;
   text-align: center;
   letter-spacing: 6px;
   position: relative;

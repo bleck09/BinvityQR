@@ -1,0 +1,98 @@
+.tarjetas-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  margin: 6%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.fixed-text {
+  font-size: 1.8rem;
+  color: #ffffff;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.evento-container {
+  position: relative;
+  display: inline-flex; /* Hace que el contenedor se ajuste al contenido */
+  overflow: hidden;
+}
+
+.evento-background {
+  display: inline-flex; /* Se ajusta al texto */
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background: linear-gradient(90deg, #ff00ff, #ff66ff);
+  border-radius: 12px;
+  padding: 0 20px; /* Espacio para que la letra respire */
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.evento-text {
+  font-size: 1.8rem;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* ===== Media Queries Responsives ===== */
+
+@media (max-width: 1024px) {
+  .fixed-text,
+  .evento-text {
+    font-size: 1.6rem;
+  }
+
+  .evento-background {
+    height: 55px;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tarjetas-section {
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 4%;
+  }
+
+  .fixed-text {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .evento-background {
+    height: 50px;
+    padding: 0 10px;
+  }
+
+  .evento-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fixed-text {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .evento-background {
+    height: 45px;
+    padding: 0 8px;
+  }
+
+  .evento-text {
+    font-size: 1.3rem;
+  }
+}
