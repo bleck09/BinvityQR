@@ -1,5 +1,5 @@
 import React from "react";
-import Bienvenido from "../../atoms/Bienvenido"; 
+import Bienvenido from "../../atoms/Bienvenido";
 import CardModerno from "../../atoms/CardModerno";
 import CTA from "../../atoms/CTA";
 import GaleriaFotos from '../../atoms/GaleriaFotos';
@@ -9,13 +9,16 @@ import Principal from "../../secciones/principal/Principal";
 
 
 const Home = () => {
- 
+
 
   return (
     <div className="TransicionesModernas">
-      <Principal/>
+      <div className="fondoImagen">
+        <Principal />
 
-      <Tarjetas/>
+        <Tarjetas />
+      </div>
+
       {/* Sección de bienvenida */}
       <Bienvenido />
 
@@ -23,8 +26,8 @@ const Home = () => {
       <CardModerno />
 
       {/* Sección de carrusel moderno */}
-     
-      <GaleriaFotos/>
+
+      <GaleriaFotos />
 
 
       {/* Sección CTA */}

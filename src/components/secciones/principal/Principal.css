@@ -1,9 +1,10 @@
 .PrincipalUnique {
-  width: 100%;
+  width: 80%;
   height: 50vh; /* tu valor original */
   display: flex;
   justify-content: center;
   align-items: center;
+  
   position: relative;
   overflow: hidden;
   /* si quieres que el fondo ocupe más espacio, cambia height a 80vh o 100vh */
@@ -21,7 +22,7 @@
 
 /* Texto encima */
 .PrincipalText {
-  font-size: 8vw;
+  font-size: 10vw;
   font-weight: bold;
   font-family: 'Georgia', serif; font-style: italic;
   text-align: center;
