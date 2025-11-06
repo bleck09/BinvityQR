@@ -52,12 +52,14 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   min-height: 320px; /* ✅ todos los cards tendrán la misma altura */
   margin-bottom: 2.5rem; /* ✅ evita que se tapen entre sí */
+  border: 1px solid #0ff;
 }
 
 /* Hover */
 .bk-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 35px rgba(255, 0, 255, 0.623);
+  border: 1px solid rgba(255, 0, 255, 0.623);
 }
 
 /* Cabecera: imagen sobresaliente */
@@ -74,6 +76,7 @@
   background-blend-mode: overlay;
   background-color: rgba(2, 6, 23, 0.06);
   flex-shrink: 0;
+   border: 2px solid rgba(255, 255, 255, 0.623);
 }
 
 /* Cuerpo */
@@ -101,9 +104,12 @@
 /* Descripción */
 .bk-card__desc {
   font-size: 1rem;
-  color: #ffffff;
+  color: #cce7ff;
   line-height: 1.4;
   margin-bottom: auto; /* ✅ empuja el botón hacia abajo */
+  text-align: center; /* ✅ Centra horizontalmente el texto */
+  width: 100%; /* ✅ Asegura que ocupe todo el ancho del contenedor */
+  display: block; /* ✅ Para que se comporte como un elemento de bloque */
 }
 
 /* Footer / botón */

@@ -26,6 +26,7 @@ function CardModerno() {
         <animated.div key={index} style={style} className="card">
           <h2>{cards[index].title}</h2>
           <p>{cards[index].desc}</p>
+          
         </animated.div>
       ))}
     </div>

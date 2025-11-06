@@ -1,7 +1,9 @@
 import { motion, useMotionValue, useTransform } from 'motion/react';
-import { useState } from 'react';
-import Producto1 from "../../assets/imagenes/hadoop.jpg"; // Imagen interna
-import './GaleriaFotos.css'; // Nuevo archivo CSS
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import './GaleriaFotos.css';
+
 
 function CardTilt({ children, onSendToBack, sensitivity }) {
   const x = useMotionValue(0);
@@ -32,25 +34,24 @@ function CardTilt({ children, onSendToBack, sensitivity }) {
     </motion.div>
   );
 }
+CardTilt.propTypes = {
+  children: PropTypes.node.isRequired,
+  onSendToBack: PropTypes.func.isRequired,
+  sensitivity: PropTypes.number.isRequired,
+}
 
 export default function GaleriaFotos({
+  cards = [], // 👈 ahora recibe un array externo
   randomRotation = true,
   sensitivity = 180,
   cardDimensions = { width: 250, height: 350 },
   animationConfig = { stiffness: 260, damping: 20 },
   sendToBackOnClick = true
 }) {
-  const initialCards = [
-    { id: 1, title: "Hadoop", img: Producto1, description: "Framework para procesamiento distribuido de datos grandes." },
-    { id: 2, title: "Hadoop 2", img: Producto1, description: "Sección de ejemplo con descripción personalizada." },
-    { id: 3, title: "Hadoop 3", img: Producto1, description: "Cada carta puede tener su propia información." },
-    { id: 4, title: "Hadoop 4", img: Producto1, description: "Puedes modificar título, imagen y descripción." }
-  ];
-
-  const [cards, setCards] = useState(initialCards);
+  const [stack, setStack] = useState(cards);
 
   const sendToBack = id => {
-    setCards(prev => {
+    setStack(prev => {
       const newCards = [...prev];
       const index = newCards.findIndex(card => card.id === id);
       const [card] = newCards.splice(index, 1);
@@ -65,10 +66,10 @@ export default function GaleriaFotos({
       style={{
         width: cardDimensions.width,
         height: cardDimensions.height,
-        perspective: 800
+        perspective: 800,
       }}
     >
-      {cards.map((card, index) => {
+      {stack.map((card, index) => {
         const randomRotate = randomRotation ? Math.random() * 10 - 5 : 0;
 
         return (
@@ -77,28 +78,31 @@ export default function GaleriaFotos({
               className="card-mod"
               onClick={() => sendToBackOnClick && sendToBack(card.id)}
               animate={{
-                rotateZ: (cards.length - index - 1) * 4 + randomRotate,
-                scale: 1 + index * 0.06 - cards.length * 0.06,
-                transformOrigin: '50% 50%'
+                rotateZ: (stack.length - index - 1) * 4 + randomRotate,
+                scale: 1 + index * 0.06 - stack.length * 0.06,
+                transformOrigin: '50% 50%',
               }}
               initial={false}
               transition={{
                 type: 'spring',
                 stiffness: animationConfig.stiffness,
-                damping: animationConfig.damping
+                damping: animationConfig.damping,
               }}
               style={{
                 width: cardDimensions.width,
                 height: cardDimensions.height,
                 display: 'flex',
                 flexDirection: 'column',
-                overflow: 'hidden'
+                overflow: 'hidden',
               }}
             >
-              <img src={card.img} alt={`card-${card.id}`} className="card-mod-image" />
+              <img src={card.img} alt={card.title} className="card-mod-image" />
               <div className="card-mod-content">
                 <h3>{card.title}</h3>
                 <p>{card.description}</p>
+                <Link to={card.boton} className="back-home-btn">
+                  🌸 Ver Ejemplo
+                </Link>
               </div>
             </motion.div>
           </CardTilt>
@@ -107,3 +111,24 @@ export default function GaleriaFotos({
     </div>
   );
 }
+
+GaleriaFotos.propTypes = {
+  cards: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    img: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    boton: PropTypes.string.isRequired,
+  })),
+  randomRotation: PropTypes.bool,
+  sensitivity: PropTypes.number,
+  cardDimensions: PropTypes.shape({
+    width: PropTypes.number,
+    height: PropTypes.number,
+  }),
+  animationConfig: PropTypes.shape({
+    stiffness: PropTypes.number,
+    damping: PropTypes.number,
+  }),
+  sendToBackOnClick: PropTypes.bool,
+};
