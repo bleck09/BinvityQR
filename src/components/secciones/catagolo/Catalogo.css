@@ -132,6 +132,11 @@
   box-shadow: 0 6px 14px rgba(0, 123, 255, 0.18);
   transition: all 0.25s ease;
   cursor: pointer;
+
+  /* 🔹 Quita el subrayado y ajusta estilo de texto */
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
 .bk-card__btn:hover {

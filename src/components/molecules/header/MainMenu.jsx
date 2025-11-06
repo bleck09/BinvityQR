@@ -6,7 +6,7 @@ import './MainMenu.css'
 const MainMenu = ({ onLinkClick }) => {
   const links = [
     { to: '/', label: 'Inicio' },
-    { to: '/productos', label: 'Productos' },
+    { to: '/productos', label: 'Invitaciones' },
     { to: '/contacto', label: 'Contacto' },
     { to: '/acerca', label: 'Acerca de' },
     

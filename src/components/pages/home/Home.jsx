@@ -2,7 +2,7 @@ import React from "react";
 import Bienvenido from "../../atoms/Bienvenido";
 import CardModerno from "../../atoms/CardModerno";
 import CTA from "../../atoms/CTA";
-import GaleriaFotos from '../../atoms/GaleriaFotos';
+
 import Tarjetas from "../../secciones/tarjetas/Tarjetas";
 import Nosotros from "../../secciones/nosotros/Nosotros";
 import "./Home.css";
@@ -31,7 +31,7 @@ const Home = () => {
 
       {/* Sección de carrusel moderno */}
 
-      <GaleriaFotos />
+     
 
 
       {/* Sección CTA */}

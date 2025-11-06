@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 import "./Catalogo.css";
 import quinceAnios from "/src/assets/imagenes/15años/15años.webp";
 import boda from "/src/assets/imagenes/boda/Boda.jpeg";
@@ -94,8 +95,10 @@ const Catalogo = () => {
               <p className="bk-card__desc">{cat.descripcion}</p>
             </div>
 
-            <div className="bk-card__footer"> {/* CLASE RENOMBRADA */}
-              <button className="bk-card__btn">Ver más</button>
+            <div className="bk-card__footer">
+              <Link to="/Productos" className="bk-card__btn">
+                Ver más
+              </Link>
             </div>
           </motion.div>
         ))}
