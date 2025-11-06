@@ -1,3 +1,4 @@
+/* ========== Mantengo tus reglas globales (sin cambios) ========== */
 .products-section {
   min-height: 100vh;
   padding: 4rem 2rem;
@@ -13,11 +14,10 @@
   font-size: 2.8rem;
   margin-bottom: 1rem;
   background: linear-gradient(90deg, #00ffff, #ff00ff);
-  background-clip: text; /* ✅ propiedad estándar */
-  -webkit-background-clip: text; /* para navegadores basados en WebKit (Chrome, Edge, Safari) */
+  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 
 .products-subtitle {
   font-size: 1.2rem;
@@ -25,6 +25,7 @@
   margin: 0 auto 3rem auto;
   line-height: 1.6;
   color: #cce7ff;
+  margin-bottom: 5rem;
 }
 
 .categorias-container {
@@ -34,74 +35,127 @@
   gap: 2rem;
 }
 
-.categoria-card {
-  background: rgba(10, 15, 30, 0.6);
-  border: 1px solid rgba(0, 255, 255, 0.2);
-  border-radius: 16px;
-  padding: 1.5rem;
-  width: 290px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  text-align: center;
+/* =================== Estilos únicos de los cards (prefijo bk-) =================== */
+/* =================== Estilos únicos de los cards (ajustado y uniforme) =================== */
+
+/* Card principal */
+.bk-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border-radius: 1rem;
+  background: #07182E;
+  color: #333;
+  overflow: visible;
+  box-shadow: 0 10px 25px rgba(0, 255, 255, 0.315);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 320px; /* ✅ todos los cards tendrán la misma altura */
+  margin-bottom: 2.5rem; /* ✅ evita que se tapen entre sí */
 }
 
-.categoria-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(255, 0, 255, 0.4);
+/* Hover */
+.bk-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(255, 0, 255, 0.623);
 }
 
-.categoria-imagen {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
+/* Cabecera: imagen sobresaliente */
+.bk-card__header {
+  height: 140px;
+  margin: 0 18px;
+  margin-top: -34px;
   border-radius: 12px;
-  margin-bottom: 1rem;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25),
+              inset 0 0 60px rgba(0, 0, 0, 0.12);
+  background-blend-mode: overlay;
+  background-color: rgba(2, 6, 23, 0.06);
+  flex-shrink: 0;
 }
 
-.categoria-card h2 {
-  font-size: 1.6rem;
-  margin-bottom: 2rem;
-  color: #ff66ff;
+/* Cuerpo */
+.bk-card__body {
+  flex-grow: 1; /* ✅ asegura que el cuerpo ocupe espacio uniforme */
+  padding: 1.6rem 1.5rem 1rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.categoria-descripcion {
+/* Título */
+.bk-card__title {
+  font-size: 2rem;
+  background: linear-gradient(90deg, #00ffff, #ff00ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center; /* ✅ Centra horizontalmente el texto */
+  width: 100%; /* ✅ Asegura que ocupe todo el ancho del contenedor */
+  display: block; /* ✅ Para que se comporte como un elemento de bloque */
+}
+
+/* Descripción */
+.bk-card__desc {
   font-size: 1rem;
   color: #ffffff;
-  margin-bottom: 1.2rem;
   line-height: 1.4;
+  margin-bottom: auto; /* ✅ empuja el botón hacia abajo */
 }
 
-.btn-vermas {
-  background: linear-gradient(90deg, #00ffff, #0077ff);
-  color: #0a0f1e;
+/* Footer / botón */
+.bk-card__footer {
+  padding: 0 1.5rem 1.2rem;
+  padding-top: 0;
+  margin-top: auto;
+}
+
+.bk-card__btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(90deg, #007bff, #00bfff);
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
   border: none;
-  border-radius: 2rem;
-  padding: 0.7rem 1.8rem;
-  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 6px 14px rgba(0, 123, 255, 0.18);
+  transition: all 0.25s ease;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
 }
 
-.btn-vermas:hover {
-  transform: scale(1.05);
-  background: linear-gradient(90deg, #0077ff, #00ffff);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+.bk-card__btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(0, 191, 255, 0.25);
+  background: linear-gradient(90deg, #00bfff, #007bff);
 }
 
-/* Responsive */
+/* =================== Responsive =================== */
+@media (max-width: 1024px) {
+  .bk-card {
+    width: 280px;
+    min-height: 300px;
+  }
+  .bk-card__header {
+    height: 130px;
+    margin-top: -30px;
+  }
+}
+
 @media (max-width: 768px) {
-  .products-title {
-    font-size: 2.2rem;
+  .bk-card {
+    width: 92%;
+    max-width: 420px;
+    min-height: 300px;
   }
 
-  .categoria-card {
-    width: 90%;
-  }
-
-  .products-subtitle {
-    font-size: 1rem;
+  .bk-card__header {
+    height: 160px;
+    margin: 0 12px;
+    margin-top: -48px;
   }
 }

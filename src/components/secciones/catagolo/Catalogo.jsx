@@ -17,35 +17,35 @@ const Catalogo = () => {
       imagen: quinceAnios,
     },
     {
-      titulo: "💍 Boda",
+      titulo: "Boda",
       descripcion:
         "Invitaciones elegantes y románticas para el día más importante de tu vida.",
       imagen: boda,
     },
     {
-      titulo: "👶 Bautizo",
+      titulo: "Bautizo",
       descripcion:
         "Modelos dulces y delicados para celebrar la llegada de un nuevo ser.",
       imagen: bautizo,
     },
     {
-      titulo: "🎓 Graduaciones",
+      titulo: "Graduaciones",
       descripcion:
         "Diseños modernos que celebran tu esfuerzo y éxito académico.",
       imagen: graduacion,
     },
     {
-      titulo: "🎈 Fechas Especiales",
+      titulo: "Fechas Especiales",
       descripcion:
         "Personaliza cualquier evento: aniversarios, cumpleaños o reuniones familiares.",
       imagen: fechasEspeciales,
     },
     {
-      titulo: "🎂 1 Año",
+      titulo: "1 Año",
       descripcion:
-        "Celebra el primer año de tu bebé con invitaciones tiernas y llenas de alegría para este momento tan especial.",
-      imagen: unanio, 
-    }
+        "Celebra el primer año de tu bebé con invitaciones tiernas y llenas de alegría.",
+      imagen: unanio,
+    },
   ];
 
   return (
@@ -55,7 +55,6 @@ const Catalogo = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.2 }}
     >
-      {/* título principal */}
       <motion.h1
         className="products-title"
         initial={{ opacity: 0, y: -40 }}
@@ -65,7 +64,6 @@ const Catalogo = () => {
         ✨ Invitaciones Digitales Personalizadas ✨
       </motion.h1>
 
-      {/* subtítulo */}
       <motion.p
         className="products-subtitle"
         initial={{ opacity: 0, y: 30 }}
@@ -76,45 +74,29 @@ const Catalogo = () => {
         estilo único y moderno que puedes personalizar completamente.
       </motion.p>
 
-      {/* tarjetas animadas */}
       <div className="categorias-container">
         {categorias.map((cat, index) => (
           <motion.div
             key={index}
-            className="categoria-card"
+            className="bk-card"               /* CLASE RENOMBRADA */
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
             viewport={{ once: true }}
           >
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-            >
-              {cat.titulo}
-            </motion.h2>
-            <img
-              src={cat.imagen}
-              alt={cat.titulo}
-              className="categoria-imagen"
-            />
-            <motion.p
-              className="categoria-descripcion"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.7 }}
-            >
-              {cat.descripcion}
-            </motion.p>
+            <div
+              className="bk-card__header"    /* CLASE RENOMBRADA */
+              style={{ backgroundImage: `url(${cat.imagen})` }}
+            ></div>
 
-            <motion.button
-              className="btn-vermas"
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.96 }}
-            >
-              Ver ejemplos
-            </motion.button>
+            <div className="bk-card__body">  {/* CLASE RENOMBRADA */}
+              <h2 className="bk-card__title">{cat.titulo}</h2>
+              <p className="bk-card__desc">{cat.descripcion}</p>
+            </div>
+
+            <div className="bk-card__footer"> {/* CLASE RENOMBRADA */}
+              <button className="bk-card__btn">Ver más</button>
+            </div>
           </motion.div>
         ))}
       </div>
