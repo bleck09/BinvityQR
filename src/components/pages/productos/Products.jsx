@@ -108,9 +108,8 @@ export default function Products() {
 
                   <div className="card-footer">
                     <Link to={card.route} className="btn-ghost">Ver ejemplo</Link>
-                    <button className="btn-primary">Personalizar</button>
                   </div>
-                </div>
+                </div>f
               </motion.article>
             ))}
           </div>
