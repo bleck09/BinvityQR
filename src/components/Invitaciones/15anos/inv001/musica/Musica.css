@@ -1,0 +1,72 @@
+.musica-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+}
+.titulo-musica {
+  font-family: 'Beau Rivage', cursive;
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+  text-shadow: 0 0 8px rgba(253, 61, 163, 0.6);
+  letter-spacing: 1px;
+}
+
+.controles-musica {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.boton-musica {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #ff06d5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.boton-musica:hover {
+  transform: scale(1.15);
+  color: #8d0b50;
+}
+
+.boton-musica.principal {
+  background: linear-gradient(135deg, #ffd700, #fd3da3);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  box-shadow: 0 0 20px rgba(253, 61, 163, 0.5);
+  transition: all 0.3s ease;
+}
+
+.boton-musica.principal:hover {
+  background: linear-gradient(135deg, #fd3da3, #ffd700);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+}
+
+.boton-musica.principal.activo {
+  animation: brillo 1.5s infinite alternate;
+}
+
+@keyframes brillo {
+  from {
+    box-shadow: 0 0 20px rgba(253, 61, 163, 0.5);
+  }
+  to {
+    box-shadow: 0 0 35px rgba(255, 215, 0, 0.8);
+  }
+}
+
+.boton-musica.inactivo {
+  opacity: 0.5;
+  cursor: default;
+}

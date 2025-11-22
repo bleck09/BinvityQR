@@ -1,0 +1,95 @@
+.hora-container {
+    width: 100%;
+    text-align: center;
+    padding: 40px 20px;
+
+    border-radius: 20px;
+}
+
+/* TÍTULO */
+.hora-fecha {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fd009c;
+    /* rosa fuerte */
+    font-family: "Playfair Display", serif;
+}
+
+/* CARD */
+.hora-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    width: max-content;
+    margin: 0 auto;
+
+    background: #f5d3df;
+    /* rosa pastel */
+    padding: 18px 30px;
+
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    border: 2px solid #fd009c;
+    /* borde rosado del calendario */
+}
+
+.hora-icon {
+    font-size: 1.8rem;
+    color: #fd009c;
+    /* dorado */
+}
+
+.hora-text {
+
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fd009c;
+    /* dorado */
+}
+
+/* ANIMACIÓN: “LATIDO suave” */
+.anim-hora {
+    animation: palpitar 1.8s ease-in-out infinite;
+}
+
+@keyframes palpitar {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.07);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* TEXTO FINAL */
+.hora-detalle {
+
+    font-family: 'Beau Rivage', 'Alex Brush', serif;
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 4px rgb(255, 131, 218);
+    text-align: center;
+    padding: 0px 20px 0px 20px;
+    /* arriba | lados | abajo */
+    margin: 20px auto 5px auto;
+    /* arriba | lados | abajo */
+    width: 90%;
+    margin-top: 25px;
+    color: #333;
+   
+}
+
+.puntualidad {
+    color: #fd009c;
+    
+}

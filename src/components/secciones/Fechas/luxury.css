@@ -1,0 +1,97 @@
+.fechaEvento-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.cal-card {
+  background: linear-gradient(145deg, #ffe6f3, #ffd7f1);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(253, 0, 156, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+.mes-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #fd009c, #ffd700);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.grid-legend {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.grid-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  gap: 5px;
+}
+
+.dia {
+  padding: 10px 0;
+  border-radius: 8px;
+  font-weight: bold;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.dia.especial {
+  background: #ffb6e0;
+  color: white;
+  font-size: 1.1rem;
+  transform: scale(1.05);
+}
+
+.corazon {
+  animation: latido 1s infinite;
+  display: inline-block;
+}
+
+@keyframes latido {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+}
+
+/* Confeti */
+.confeti {
+  position: absolute;
+  top: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: caer 2s ease-in-out infinite;
+  opacity: 0.8;
+}
+
+@keyframes caer {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(80px) rotate(360deg); opacity: 0; }
+}
+
+/* Responsive */
+@media(max-width: 480px) {
+  .cal-card {
+    padding: 15px;
+  }
+
+  .mes-titulo {
+    font-size: 1.5rem;
+  }
+
+  .dia {
+    padding: 8px 0;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,142 @@
+.fechaEvento-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 40px 20px 0 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.cal-card {
+  background: rgba(255, 244, 250, 0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 25px rgba(253, 0, 156, 0.2);
+  max-width: 400px;
+  width: 100%;
+}
+
+.mes-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  background: linear-gradient(90deg, #fd009c, #ffd700);
+  background-clip: text;
+  -webkit-background-clip: text; /* soporte Safari */
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.grid-legend {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #fd009c;
+}
+
+.grid-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.dia {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #4c0040;
+  position: relative;
+}
+
+.dia.vacio {
+  background: transparent;
+}
+
+.dia-especial {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+}
+
+.corazon {
+  position: absolute;
+  font-size: 2rem;
+  color: #fd009c;
+  animation: latido 1s infinite;
+}
+
+.numero-dia {
+  position: absolute;
+  font-weight: bold;
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* Animación de latido */
+@keyframes latido {
+  0%, 100% { transform: scale(2.5); }
+  50% { transform: scale(2.7); }
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+  .cal-card {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .dia {
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  .dia-especial {
+    width: 32px;
+    height: 32px;
+  }
+
+  .corazon {
+    font-size: 2.5rem;
+  }
+
+  .numero-dia {
+    font-size: 0.9rem;
+  }
+
+  .mes-titulo {
+    font-size: 2rem;
+  }
+}
+
+@media(max-width: 480px) {
+  .dia {
+    height: 35px;
+    font-size: 0.8rem;
+  }
+
+  .dia-especial {
+    width: 28px;
+    height: 28px;
+  }
+
+  .corazon {
+    font-size: 2rem;
+  }
+
+  .numero-dia {
+    font-size: 0.75rem;
+  }
+
+  .mes-titulo {
+    font-size: 2rem;
+  }
+}
+
+
+

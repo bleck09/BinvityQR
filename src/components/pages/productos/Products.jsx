@@ -2,6 +2,7 @@ import React, { useMemo, useState } from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import "./Productos.css";
+import GaleriaFotos from "../../secciones/galeriaFotos/GaleriaFotos";
 
 import quinceAnios from "/src/assets/imagenes/15años/15años.webp";
 import boda from "/src/assets/imagenes/boda/Boda.jpeg";
@@ -11,13 +12,14 @@ import fechasEspeciales from "/src/assets/imagenes/fechasepeciales/FechasEspecia
 import unanio from "/src/assets/imagenes/1año/1año.webp";
 
 const DEFAULT_ITEMS = [
-  { id: "b1", category: "Boda", title: "Boda Romántica", img: boda, description: "Invitación elegante y romántica para matrimonios clásicos.", route: "/boda/Binv001" },
-  { id: "b2", category: "Boda", title: "Boda Minimalista", img: boda, description: "Diseño moderno y minimalista para parejas contemporáneas.", route: "/boda/Binv002" },
-  { id: "ba1", category: "Bautizo", title: "Bautizo Dulce", img: bautizo, description: "Estética tierna y limpia para el primer sacramento.", route: "/bautizo/Binv001" },
-  { id: "g1", category: "Graduaciones", title: "Graduación Estelar", img: graduacion, description: "Diseño moderno para celebrar tu logro académico.", route: "/graduacion/Binv001" },
-  { id: "15a", category: "15 Años", title: "Quinceañera Clásica", img: quinceAnios, description: "Invitaciones encantadoras para una noche inolvidable.", route: "/15/Binv001" },
-  { id: "fs1", category: "Fechas Especiales", title: "Aniversario Chic", img: fechasEspeciales, description: "Personaliza tu evento especial con estilo.", route: "/fechas/FE001" },
-  { id: "1a", category: "1 Año", title: "Primer Año", img: unanio, description: "Invitaciones tiernas para la celebración del primer año.", route: "/1ano/ANV001" },
+  { id: "b1", category: "Boda", title: "Boda Romántica", img: boda, description: "Invitación elegante y romántica para matrimonios clásicos.", route: "/invitaciones/boda/bod001" },
+  { id: "b2", category: "Boda", title: "Boda Minimalista", img: boda, description: "Diseño moderno y minimalista para parejas contemporáneas.", route: "/invitaciones/boda/bod002" },
+  { id: "ba1", category: "Bautizo", title: "Bautizo Dulce", img: bautizo, description: "Estética tierna y limpia para el primer sacramento.", route: "/invitaciones/bautizo/ba001" },
+  { id: "g1", category: "Graduaciones", title: "Graduación Estelar", img: graduacion, description: "Diseño moderno para celebrar tu logro académico.", route: "/invitaciones/graduacion/gra001" },
+  { id: "15a1", category: "15 Años", title: "Quinceañera Clásica", img: quinceAnios, description: "Invitaciones encantadoras para una noche inolvidable.", route: "/invitaciones/15anos/inv001" },
+  { id: "15a2", category: "15 Años", title: "Quinceañera moderna", img: quinceAnios, description: "Invitaciones encantadoras.", route: "/invitaciones/15anos/inv002" },
+  { id: "fs1", category: "Fechas Especiales", title: "Aniversario Chic", img: fechasEspeciales, description: "Personaliza tu evento especial con estilo.", route: "/invitaciones/fecha/fe001" },
+  { id: "1a", category: "1 Año", title: "Primer Año", img: unanio, description: "Invitaciones tiernas para la celebración del primer año.", route: "/invitaciones/bebes/be001" },
 ];
 
 const CATEGORIES = ["Todo", "Boda", "Bautizo", "Graduaciones", "15 Años", "Fechas Especiales", "1 Año"];
@@ -109,11 +111,12 @@ export default function Products() {
                   <div className="card-footer">
                     <Link to={card.route} className="btn-ghost">Ver ejemplo</Link>
                   </div>
-                </div>f
+                </div>
               </motion.article>
             ))}
           </div>
         )}
+        <GaleriaFotos/>
       </motion.main>
     </div>
   );
